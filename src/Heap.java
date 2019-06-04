@@ -50,14 +50,20 @@ public class Heap {
         if (size == 0) {
             return -1;
         }
+        //先保存堆顶
         int ret = data[1];
+        //再将最后一个数放在堆顶
         data[1] = data[size--];
         int i = 1;
+        //逐层递归交换子树中较大的数
         while (i * 2 <= size) {
+            //j左子树
             int j = i * 2;
+            //j+1是右子树，选一个较大的
             if (j + 1 <= size && data[j] < data[j + 1]) {
                 j += 1;
             }
+            //如果较大的比父节点大，就交换，否则返回
             if (data[i] > data[j]) break;
             swap(data, i, j);
             i = j;
