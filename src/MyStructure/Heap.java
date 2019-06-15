@@ -35,6 +35,7 @@ public class Heap {
     }
 
     public Heap(int capacity) {
+        //0不放元素，避免边界判断
         this.data = new int[capacity + 1];
         this.size = 0;
     }

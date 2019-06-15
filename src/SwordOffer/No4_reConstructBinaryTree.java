@@ -1,7 +1,7 @@
 package SwordOffer;
 
 import java.util.Arrays;
-
+import MyStructure.TreeNode;
 public class No4_reConstructBinaryTree {
 
 

@@ -1,5 +1,5 @@
 package SwordOffer;
-
+import MyStructure.*;
 import java.util.LinkedList;
 
 //算法思想：根据前序遍历规则完成序列化与反序列化。所谓序列化指的是遍历二叉树为字符串；所谓反序列化指的是依据字符串重新构造成二叉树。

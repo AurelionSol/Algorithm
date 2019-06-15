@@ -3,7 +3,7 @@ package SwordOffer;
 import java.util.ArrayList;
 
 import static java.lang.Integer.max;
-
+import MyStructure.TreeNode;
 public class No39_IsBalanced_Solution {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4, 5, -1, -1, 6};

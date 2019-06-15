@@ -5,7 +5,7 @@ import java.util.*;
 public class No27_Permutation {
     public static void main(String[] args) {
         No27_Permutation permutation = new No27_Permutation();
-        int[] nums = {3,3,0,3};
+        int[] nums = {3, 3, 0, 3};
         System.out.println(permutation.permuteUnique(nums));
         System.out.println("Hello World!");
     }
@@ -37,10 +37,10 @@ public class No27_Permutation {
                     it.remove();
                 }
             }
-            list =new ArrayList<>(list2) ;
+            list = new ArrayList<>(list2);
         }
         //去重复
-        listTol=new ArrayList<>(list);
+        listTol = new ArrayList<>(list);
         Iterator<String> it = listTol.iterator();
         while (it.hasNext()) {
             String s = it.next();
@@ -83,34 +83,33 @@ public class No27_Permutation {
     public List<List<Integer>> permute(int[] nums) {
         // write your code here
         List<List<Integer>> list = new ArrayList();
-        f(list,nums,0,nums.length-1);
+        f(list, nums, 0, nums.length - 1);
         return list;
     }
 
-    public void f(List<List<Integer>> list,int[] nums,int from,int to){
-        if(to < 0 || from <0 || nums == null || nums.length==0) {
+    public void f(List<List<Integer>> list, int[] nums, int from, int to) {
+        if (to < 0 || from < 0 || nums == null || nums.length == 0) {
             list.add(new ArrayList());
         }
-        if(from==to) {
+        if (from == to) {
             List<Integer> temp = new ArrayList();
-            for (int i =0; i<nums.length ;i++ ){
+            for (int i = 0; i < nums.length; i++) {
                 temp.add(nums[i]);
             }
             list.add(temp);
-        }
-        else{
-            for(int i =from;i<=to;i++){
-                swap(nums,from,i);
-                f(list, nums,from+1, to);
-                swap(nums,from,i);
+        } else {
+            for (int i = from; i <= to; i++) {
+                swap(nums, from, i);//对于后面每一个数都把它交换到最前面来
+                f(list, nums, from + 1, to);//递归调用
+                swap(nums, from, i);//复原
             }
         }
     }
 
-    public void swap(int[] nums,int i,int j){
+    public void swap(int[] nums, int i, int j) {
         int temp = nums[i];
-        nums[i]=nums[j];
-        nums[j]=temp;
+        nums[i] = nums[j];
+        nums[j] = temp;
 
     }
     //---------------------------------------------不包含重复的全排列
@@ -127,17 +126,18 @@ public class No27_Permutation {
         }
         ArrayList<Integer> list = new ArrayList<>();
         int[] visited = new int[nums.length];
-        helper(nums,list,totList,visited);
+        helper(nums, list, totList, visited);
         return totList;
 
     }
-    public void helper(int[] nums,List<Integer> list,List<List<Integer>> totList,int[] visited){
-        if(list.size()==nums.length){
+
+    public void helper(int[] nums, List<Integer> list, List<List<Integer>> totList, int[] visited) {
+        if (list.size() == nums.length) {
             totList.add(new ArrayList<>(list));
             return;
         }
-        for(int i =0;i<nums.length;i++){
-            if(visited[i]==1|| (i != 0 && nums[i - 1] == nums[i] && visited[i - 1] == 0)){
+        for (int i = 0; i < nums.length; i++) {
+            if (visited[i] == 1 || (i != 0 && nums[i - 1] == nums[i] && visited[i - 1] == 0)) {
                 continue;
             }
             list.add(nums[i]);

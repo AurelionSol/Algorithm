@@ -2,7 +2,7 @@ package SwordOffer;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
+import MyStructure.TreeNode;
 public class No24_FindPath {
     public static void main(String[] args) {
         int[] nums = {10, 5, 12, 4, 7};

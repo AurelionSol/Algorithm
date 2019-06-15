@@ -3,7 +3,7 @@ package SwordOffer;
 import java.util.ArrayList;
 
 import static java.lang.Integer.max;
-
+import MyStructure.TreeNode;
 public class No38_TreeDepth {
 
     static ArrayList<ArrayList<Integer>> listList = new ArrayList<>();

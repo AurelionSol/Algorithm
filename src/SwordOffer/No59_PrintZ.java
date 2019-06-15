@@ -1,7 +1,7 @@
 package SwordOffer;
 
 import org.w3c.dom.Node;
-
+import MyStructure.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 

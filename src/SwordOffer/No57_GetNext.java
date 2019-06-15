@@ -1,5 +1,5 @@
 package SwordOffer;
-
+import MyStructure.*;
 public class No57_GetNext {
     public TreeLinkNode GetNext(TreeLinkNode pNode) {
         if (pNode == null) return null;

@@ -5,11 +5,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class levelOrder {
-
+    //记录深度的层序遍历
     public static void main(String[] args) {
         levelOrder main = new levelOrder();
-        int[] a = {1,2,3};
-        TreeNode node= TreeNode.listNodeByNums(a,0);
+        int[] a = {1, 2, 3, 4, 5, 6, 7};
+        TreeNode node = TreeNode.listNodeByNums(a, 0);
         System.out.println(main.levelOrder(node));
 
     }
@@ -23,8 +23,8 @@ public class levelOrder {
         List<Integer> list = new ArrayList();
         while (!deque.isEmpty()) {
             TreeNode temp = deque.peekFirst();
-            if(temp.left!=null) deque.offerLast(temp.left);
-            if(temp.right!=null) deque.offerLast(temp.right);
+            if (temp.left != null) deque.offerLast(temp.left);
+            if (temp.right != null) deque.offerLast(temp.right);
             list.add(temp.val);
             if (temp == flag) {
                 totList.add(list);

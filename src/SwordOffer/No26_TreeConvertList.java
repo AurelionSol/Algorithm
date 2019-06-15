@@ -1,5 +1,5 @@
 package SwordOffer;
-
+import MyStructure.TreeNode;
 public class No26_TreeConvertList {
     public static void main(String[] args) {
         int[] nums = {4, 3, -1, 2, -1, -1, -1, 1};

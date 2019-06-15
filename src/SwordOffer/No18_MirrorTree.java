@@ -1,5 +1,5 @@
 package SwordOffer;
-
+import MyStructure.TreeNode;
 public class No18_MirrorTree {
     public void Mirror(TreeNode root) {
         if (root == null) {

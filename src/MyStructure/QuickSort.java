@@ -1,5 +1,6 @@
 package MyStructure;
 
+import java.util.LinkedList;
 import java.util.Random;
 import java.util.Stack;
 
@@ -21,21 +22,18 @@ public class QuickSort {
     }
 
     public static void qSort(int[] nums, int left, int right) {
-        if (nums == null || left < 0 || right >= nums.length) {
-            System.out.println("error");
+        if (nums == null || left >= right || left < 0 || right >= nums.length) {
             return;
         }
-        int pos;
-        if (left < right) {
-            pos = partition(nums, left, right);
-            qSort(nums, left, pos - 1);
-            qSort(nums, pos + 1, right);
-        }
+        int pos = partition(nums, left, right);
+        qSort(nums, left, pos - 1);
+        qSort(nums, pos + 1, right);
+
     }
 
     public static int partition(int[] nums, int left, int right) {
 
-        int ranNum = (int)((Math.random()*(right-left))+left);
+        int ranNum = (int) (Math.random() * (right - left) + left);
         int pivot = nums[ranNum];
         nums[ranNum] = nums[left];
         nums[left] = pivot;
@@ -59,7 +57,7 @@ public class QuickSort {
     }
 
     public static void qSortStack(int[] nums, int left, int right) {
-        Stack<Record> stack = new Stack<>();
+        LinkedList<Record> stack = new LinkedList<>();
         if (nums == null || left < 0 || right >= nums.length) {
             System.out.println("error");
             return;

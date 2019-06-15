@@ -1,7 +1,7 @@
 package SwordOffer;
 
 import java.util.ArrayList;
-
+import MyStructure.TreeNode;
 public class No17_HasSubtree {
 
     public static void main(String[] args) {
